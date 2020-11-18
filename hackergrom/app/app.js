@@ -28,7 +28,7 @@ app.use(fileUpload({
 }));
 app.use(session({
   genid: (req) => {
-    return Date.now().toString()
+    return Date.now().toString() + 1337
   },
   secret: 'FUCKYOU',
   store: new FileStore(),
