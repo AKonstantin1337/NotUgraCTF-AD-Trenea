@@ -104,6 +104,9 @@ app.get('/admin', (req, res, next) => {
 });
 
 app.get('/media/*', (req, res, next) => {
+  if ( /\.{2}/i.test(req.path)){
+    return res.redirect('/');
+  }
   if (req.session.state) {
     const id = req.path.slice(7);
     const post = db.get('posts')
