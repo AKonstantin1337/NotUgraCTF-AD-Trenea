@@ -28,14 +28,14 @@ app.use(fileUpload({
 }));
 app.use(session({
   genid: (req) => {
-    return Date.now().toString() + 1337
+    return Date.now().toString()
   },
   secret: 'FUCKYOU',
   store: new FileStore(),
   resave: false,
   saveUninitialized: false,
   cookie: { 
-    secure: 'true',
+    secure: 'auto',
     expires: new Date(13333333333337)
   },
 }))
