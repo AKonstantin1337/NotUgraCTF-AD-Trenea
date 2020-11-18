@@ -1,0 +1,7 @@
+#!/bin/bash
+
+chmod 777 /app/storage
+chown buggy /app/service
+chmod 550 /app/service
+
+exec su-exec buggy /usr/bin/env socat -T 30 tcp-l:3333,reuseaddr,fork exec:/app/service

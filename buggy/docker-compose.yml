@@ -1,0 +1,12 @@
+version: '2.4'
+services:
+    buggy:
+        image: ugractf/ad-polygon-buggy
+        build: app
+        ports:
+          - "3333:3333"
+        volumes:
+          - "./storage:/app/storage"
+        restart: always
+        mem_limit: 128m
+        pids_limit: 128

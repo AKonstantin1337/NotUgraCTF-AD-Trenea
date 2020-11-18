@@ -1,0 +1,14 @@
+version: '2.4'
+services:
+    hackergrom:
+        image: ugractf/ad-polygon-hackergrom
+        build: app
+        ports:
+          - "3000:3000"
+        volumes:
+          - "./db.json:/app/db.json"
+          - "./pics:/app/pics"
+          - "./sessions:/app/sessions"
+        restart: always
+        mem_limit: 512m
+        pids_limit: 128
