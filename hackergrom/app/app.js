@@ -30,12 +30,12 @@ app.use(session({
   genid: (req) => {
     return Date.now().toString()
   },
-  secret: 'hack',
+  secret: 'FUCKYOU',
   store: new FileStore(),
   resave: false,
   saveUninitialized: false,
   cookie: { 
-    secure: 'auto',
+    secure: 'true',
     expires: new Date(13333333333337)
   },
 }))
